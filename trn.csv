@@ -1,0 +1,240 @@
+ID,App,Message,Corrective,Perfective,Adaptive
+55,cgeo.geocaching,Fix #6523: Set file name of waypoint file,0,1,0
+58,cgeo.geocaching,fix #6552 show debug log confirmation only in release build,0,1,0
+59,cgeo.geocaching,Fix #6573: Parse GPX original coordinates as double valuesParsing the coordinates is not necessary because we already know theirformat in advance. Futhermore  directly parsing the coordinates asdouble values also support integer values  which would not be recognizedas valid latitude/longitude by the coordinate parser.,0,1,0
+63,cgeo.geocaching,fix #6562 add .nomedia file to geocache data dir,0,0,1
+64,cgeo.geocaching,fix #6552 confirm debug mode on startShowing a dialog on c:geo start when debug mode is active.  Explaining that this can cause instabilities and asking the user to return to normal mode.,0,1,0
+65,cgeo.geocaching,fix #6560 fallback for gpx export directoryIt might happen  that the gpx export directory setting points to an outdated location e.g. from a device migration.If this directory is not available we use the default gpx directory as a fallback.,0,1,0
+70,cgeo.geocaching,fix #6554 npe in localstorageI fixed a possible npe in FileUtils  too. Hope it s ok.,0,1,0
+72,cgeo.geocaching,Revert WIP android-gradle plugin 2.5 changesThis reverts commit d2646956e7061709422909e835f77de549f42af6.,0,1,0
+78,cgeo.geocaching,fix #5874 catch exception when calling locus,0,1,0
+84,cgeo.geocaching,fix #6533 access global type filter in filter bar of cache list,0,1,0
+86,cgeo.geocaching,fix #6510: sort trackables as sub menu,1,0,0
+90,cgeo.geocaching,fix 6521 remove mapsforge_patches,0,1,0
+104,cgeo.geocaching,removed unnecessary call to isExternalStorageAvailable,0,1,0
+106,cgeo.geocaching,refactor: change from activity to context  where possibleThis seems to be necessary for upgrading appcompat  since I experiencedmore occurrences of ContextWrapper instead of Activity instances therewhen doing some initial testing.,0,1,0
+111,cgeo.geocaching,Use directory instead of diras proposed by @UniQP on Crowdin.,0,1,0
+114,cgeo.geocaching,lint: remove unused resources preference no longer used layout resource was never used,0,1,0
+116,cgeo.geocaching,remove Ant and Sonarqube settings Ant not usable for building anymore Sonarqube only used by Bananeweizen for some evaluation,0,1,0
+117,cgeo.geocaching,Do not attempt to parse a null response streamThis catches the error early and gives a better error message. Also some log messages and severities have been fixed.Noticed in issue #6464.,0,1,0
+120,cgeo.geocaching,Parse all coordinate formats from personal notes,0,1,0
+122,cgeo.geocaching,Fix codacy issues: Move fields to begin of class,0,1,0
+131,cgeo.geocaching,improve handling of external storage and fallback #6481- logging clarified- caching of externalPublicCgeoDirectory- backup fallback on internal storage,0,1,0
+140,cgeo.geocaching,fix #6469: support widescreen devices,0,1,0
+144,cgeo.geocaching,remove library sources from repositoryThey can be re-created locally by running  gradlew downloadLibs ,0,1,0
+156,cgeo.geocaching,Remove downloadable libraries from the repository,0,1,0
+159,cgeo.geocaching,Burn in version code for bugfix release,0,1,0
+163,cgeo.geocaching,fix #6450  #6451 handling of missing sd cardThere was already a fallback to the emulated sdcard and internal storage  but there was a null check missing.,0,1,0
+173,cgeo.geocaching,refactoring: use stripHtml instead of fromHtml.toString,0,1,0
+175,cgeo.geocaching,Raising version code for calendar-plugin,0,1,0
+181,cgeo.geocaching,remove showcaseview from eclipse project,0,1,0
+184,cgeo.geocaching,make checkstyle accept all line endingsOtherwise it complains on Windows about Linux line endings and viceversa.,0,1,0
+197,cgeo.geocaching,An empty page returned by the server is not an application error,0,1,0
+200,cgeo.geocaching,Remove superfluous groupCount checksgroupCount depends on the pattern  but not on the match.Thus  we know the result in advance in most cases.,0,1,0
+203,cgeo.geocaching,upgrade gradle to 3.4.1  regenerate wrapper,0,1,0
+205,cgeo.geocaching,disable static method proposal in EclipseOver time  making methods static has been one of the bigger problems inour projects at work  since this led to lots of utility classes with badtesting. Let s disable static method proposals here  too.,0,1,0
+206,cgeo.geocaching,disable checkstyle check of final modifierThis is plain wrong. Having final modifiers at arguments forbids tooverwrite them inside the method  and I want that policy to be enforced.,0,1,0
+207,cgeo.geocaching,restore Eclipse checkstyle settings,0,1,0
+213,cgeo.geocaching,fix #6368 export coords in raw format,0,1,0
+217,cgeo.geocaching,Fix #6379: Fail to open GK from link,0,1,0
+228,cgeo.geocaching,Fix #6337: Geokret inventory stay emptyRelated to b930a5d ,0,1,0
+230,cgeo.geocaching,Fix #6333: Override cache IDIf the cache is already stored on the device  we need to override thecache ID.,0,1,0
+232,cgeo.geocaching,fixed the cache directory pattern,0,1,0
+238,cgeo.geocaching,fixed apostrophe in release changelog,0,1,0
+245,cgeo.geocaching,Update URL in README fileopencaching.org.uk redirects to opencache.uk.,0,1,0
+247,cgeo.geocaching,avoid null pointer in coordinates dialog,0,1,0
+267,cgeo.geocaching,fix #6273 crash on empty log text in debug log mode,0,1,0
+268,cgeo.geocaching,fix #6189 store with preselection on long press,0,1,0
+271,cgeo.geocaching,refactoring: separate default hardware acceleration logic,0,1,0
+278,cgeo.geocaching,fix #6256 refresh list at pos 0,0,1,0
+282,cgeo.geocaching,fix #6249 history jumps to top when returning from CacheDetails,0,1,0
+293,cgeo.geocaching,remove process-phoenix and leakcanary from EclipseIn contrast to some other Android libraries  these don t have additionalresources and can be consumed as plain jars.,0,1,0
+305,cgeo.geocaching,removed maps actionbar: obsolete on v14,0,1,0
+309,cgeo.geocaching,Improve live map warning string,0,1,0
+312,cgeo.geocaching,Prepare changlog for next bugfix release,0,1,0
+318,cgeo.geocaching,Build: Remove undefined propertiesKey properties not defined in private.properties were not replaced inkeys.xml during setup. Thus the build failed because of malformedresource identifyer.,0,1,0
+321,cgeo.geocaching,fix gradle build for last 2 commits,0,1,0
+323,cgeo.geocaching,remove wrong dependency to mapsforge inner class from calendar,0,1,0
+324,cgeo.geocaching,upgrade to gradle 3.2.1removed deprecated left shift operator for tasks from build scripts,0,1,0
+325,cgeo.geocaching,upgrade android gradle pluginThis is recommended to have the recent Android Studio version and the plugin stay in sync.,0,1,0
+338,cgeo.geocaching,Create ArrayList objects with the right capacity,0,1,0
+340,cgeo.geocaching,fix #6014: export field notes for all websites,0,1,0
+346,cgeo.geocaching,replace conditional close by IOUtils.closeQuietly,0,1,0
+347,cgeo.geocaching,Do not let uncaught OkHttp exceptions crash the applicationThe OkHttp exceptions thrown in background threads are now interceptedby an UncaughtExceptionHandler.Also  this handler checks the debug settings dynamically rather thaninstalling or uninstalling itself when they are toggled.This is part of the fix for #6114.,0,1,0
+349,cgeo.geocaching,remove potentially static warningThis seems to be one of the differences between IDEA and Eclipse.,0,1,0
+354,cgeo.geocaching,fix #6133: load relative URL images from Okapi API,0,0,0
+356,cgeo.geocaching,fix #6130: log entries stream is closed too early,0,1,0
+360,cgeo.geocaching,fix #6113: trackable log page not working,0,1,0
+362,cgeo.geocaching,Ensure that Response body is closed to prevent connection leaks,0,1,0
+373,cgeo.geocaching,fix #6111: manipulate UI elements on UI thread onlyAlso  do not block on UI thread.,1,0,0
+379,cgeo.geocaching,Do not feed Observable a null value,0,1,0
+383,cgeo.geocaching,fix #6095 GC2CJPF archived causing tests to fail,0,1,0
+386,cgeo.geocaching,fix #6089: cannot open OC.FR links,0,1,0
+391,cgeo.geocaching,fix #6082: Disable routing for very short distance,0,1,0
+394,cgeo.geocaching,update rxandroid for Eclipse build,0,1,0
+403,cgeo.geocaching,fix #6065 no logs when parsing gc custom date failed,0,1,0
+411,cgeo.geocaching,Get gc.com date format using Jsoup,0,1,0
+416,cgeo.geocaching,remove JDT 4.7 update site from Eclipse setupThis was added unintentionally,0,1,0
+423,cgeo.geocaching,fix #6051: date format parsing incomplete,0,1,0
+439,cgeo.geocaching,fix #6024 recognize log picture upload success,0,1,0
+447,cgeo.geocaching,Pluralize personal note upload message,0,1,0
+450,cgeo.geocaching,fix #6010: don t store signature only offline log,0,1,0
+454,cgeo.geocaching,disable markers for auto derived changes,0,1,0
+471,cgeo.geocaching,replace locus library by repository dependencyThe libs itself are still needed for the Eclipse build process.,0,1,0
+475,cgeo.geocaching,fix #5994: draw routing in any zoom levelpath drawing needs temporary bitmaps  so we are back at line segmentdrawing instead,1,0,0
+486,cgeo.geocaching,upgrade to release of leakcanary,0,1,0
+490,cgeo.geocaching,enforce new route when switching target,0,1,0
+493,cgeo.geocaching,move AIDL files into normal source foldersOtherwise there are package name conflicts in the generated files inEclipse.,0,1,0
+500,cgeo.geocaching,BRouter integration: Derive from DefaultHandler instead of ContentHandler in the XML parsing,0,1,0
+503,cgeo.geocaching,fix #5980: do not install from Play Store on devices without GPSThis change is necessary to accomodate a modification of the permissionsystem for API >= 21. It does not change the current requirements forinstalling cgeo.,0,1,0
+504,cgeo.geocaching,fix #5976: Non GC search limited to 20 resultsmake number of caches returned depending on whether GC is active or noti.e. mixed mode versus OC only mode.,0,1,0
+511,cgeo.geocaching,ignore proguard warnings for legacy http client,0,1,0
+512,cgeo.geocaching,remove duplicate classes from findbugs annotations,0,1,0
+518,cgeo.geocaching,make eclipse build with google api 23 too,0,1,0
+524,cgeo.geocaching,Merge pull request #5972 from samueltardieu/issue-5971fix #5971: include information on permissions in system info,0,1,0
+558,cgeo.geocaching,fix #5920: export D/T values as integer  if possible,0,1,0
+559,cgeo.geocaching,releng: remove unused resource files,0,1,0
+562,cgeo.geocaching,Merge pull request #5921 from rsudev/issue_5907Fix #5907  Concurrent modification exception in new map,0,1,0
+575,cgeo.geocaching,Fix #5766: Avoid StringUtils.containsAny to work around Xiaomi issue,0,1,0
+578,cgeo.geocaching,Merge pull request #5895 from tobiasge/nav-osmandAdd OsmAnd as navigation app,0,1,0
+580,cgeo.geocaching,Merge remote-tracking branch  origin/release ,0,1,0
+586,cgeo.geocaching,Use https instead of http for translation URL,0,1,0
+590,cgeo.geocaching,Merge pull request #5873 from pstorch/5839_list_handling_in_popupChange List handling buttons for #5839,0,1,0
+592,cgeo.geocaching,Fixes #5797  Better strings for New map- Replaced naming as suggested- Added longer description to preferences screen- Adapted changelog,0,1,0
+596,cgeo.geocaching,Merge pull request #5870 from kumy/issue-5863Fix #5863: wrong log author for GK with comments,0,1,0
+597,cgeo.geocaching,Merge pull request #5869 from kumy/issue-5868Fix #5868: Adapt unit tests,0,1,0
+598,cgeo.geocaching,Add eclipse launch config for BasicRelease,0,0,1
+607,cgeo.geocaching,Fix parsing images titles on GK logbook,1,0,0
+611,cgeo.geocaching,Merge pull request #5858 from UniQP/vectorReplace Vector by ArrayList,0,1,0
+613,cgeo.geocaching,fix #5857: only allow wheryougo invocation for unique cartridge,0,0,1
+615,cgeo.geocaching,Add unit tests for full GK details,0,0,1
+617,cgeo.geocaching,update documentation around contexts,0,1,0
+619,cgeo.geocaching,Fix multiline parsing for GeoKrety detailsFrom the tests I ran  geokrety.org remove all html tags in userinput fields. The unit tests as presented were false.  br  tagscan t appear in xml.,0,1,0
+624,cgeo.geocaching,fix memory leak in Android UserManager,1,0,0
+630,cgeo.geocaching,Use Android annotations in Calendar plugin,0,1,0
+639,cgeo.geocaching,#5839: forbid empty list selection,1,0,0
+643,cgeo.geocaching,avoid wrong findbugs upgrade recommentation,0,1,0
+654,cgeo.geocaching,null analysis confused in eclipse,0,1,0
+664,cgeo.geocaching,New test for TextUtils.stripHtml,0,0,1
+665,cgeo.geocaching,remove jdt core update site from setup,0,1,0
+668,cgeo.geocaching,Merge pull request #5793 from pstorch/5763_stay_at_last_pos_after_movingfix #5763 stay at last position after moving a cache,0,1,0
+688,cgeo.geocaching,fix checkstyle suppression redirection,0,1,0
+697,cgeo.geocaching,null annotation inspection warnings of intellij,0,1,0
+711,cgeo.geocaching,avoid crashing on empty tags in geocaching.su parser,0,1,0
+727,cgeo.geocaching,update dependencies and plugins,0,1,0
+728,cgeo.geocaching,avoid leaking windows on activity cancellation,0,1,0
+729,cgeo.geocaching,play services were used even though not available,0,1,0
+733,cgeo.geocaching,Merge pull request #5770 from pstorch/5562_for_releasecherry-pick #5562 for release,0,1,0
+734,cgeo.geocaching,Merge pull request #5775 from rsudev/issue_5765Fix #5765  Numeric trackable secret code or five digit code not working,0,1,0
+735,cgeo.geocaching,Merge pull request #5767 from UniQP/issue-5762Fix #5762: Use more precise found pattern,0,1,0
+744,cgeo.geocaching,Fix windows-only paths in project.properties,0,1,0
+756,cgeo.geocaching,Merge pull request #5753 from UniQP/whitespaceAdd spaces around operators/tokens,0,1,0
+757,cgeo.geocaching,Check for whitespace around tokens,0,1,0
+767,cgeo.geocaching,fix #5132 log images for opencaching,0,1,0
+774,cgeo.geocaching,fix #5745 refresh list after import gpx,0,1,0
+776,cgeo.geocaching,remove superflous generic types,0,1,0
+779,cgeo.geocaching,Update HTML of GC2JVEH archived on 2016-05-16,1,0,0
+784,cgeo.geocaching,Fix #5734: Do not show archived caches when filtering for disabled ones,0,1,0
+790,cgeo.geocaching,disable check for newline at file endBy default this check looks for the newline from the current platform.Since there are committers from Linux and Windows  there will always beconfusion. Changing the target value to a fixed newline would not helpeither.Since all compilers etc. will happily ignore newline differences  we canaccept different line endings in different files.,0,1,0
+796,cgeo.geocaching,suggestion for #5719 to render log images with bullets points,0,1,0
+803,cgeo.geocaching,Resolve FIXME: Use LogType field instead of the LogTypeImage,0,1,0
+813,cgeo.geocaching,fix #5627: move cache via long press of manage button,0,1,0
+815,cgeo.geocaching,Merge pull request #5708 from pstorch/fix_5707fix #5701 manage lists when Ask for List is disabled,0,1,0
+818,cgeo.geocaching,upgrade google services and jackson xml,0,1,0
+820,cgeo.geocaching,Merge pull request #5698 from pstorch/5483_add_waypoint_from_imagefix #5483  add waypoint  context menu for geotagged images,0,1,0
+825,cgeo.geocaching,Merge pull request #5697 from samueltardieu/in-process-dexingAttempt in-process dexing,0,1,0
+834,cgeo.geocaching,upgrade commons.io and metadata extractor,0,1,0
+837,cgeo.geocaching,Merge pull request #5658 from pstorch/multi_list_uiFirst proposal for #5550 multi list ui,0,1,0
+839,cgeo.geocaching,fix #5221: Spoiler images of owned caches missing description,1,0,0
+841,cgeo.geocaching,Merge pull request #5684 from samueltardieu/issue-5682fix #5682: an absent image file is not fatal,0,1,0
+848,cgeo.geocaching,refactoring: mode codacy cleanups,0,1,0
+852,cgeo.geocaching,enable checkstyle suppressionsThe suppression file is referenced via http  since relative local pathsare not possible  so we cannot create a stable local name for alldeveloper machines.,0,1,0
+854,cgeo.geocaching,refactoring: more checkstyle cleanup,0,1,0
+869,cgeo.geocaching,refactoring: fix some checkstyle issues,0,1,0
+870,cgeo.geocaching,Merge pull request #5662 from UniQP/finalprotectedAvoid protected fields/methods in final classes,0,1,0
+871,cgeo.geocaching,Merge remote-tracking branch  origin/release ,0,1,0
+872,cgeo.geocaching,Merge pull request #5663 from UniQP/removeTagsRemove tags,0,1,0
+873,cgeo.geocaching,Merge pull request #5649 from kumy/checkstyleAdd Checkstyle to gradle,0,1,0
+876,cgeo.geocaching,Refactor: Move ellipsis to strings_not_translatablePresent as is in the code  this breaks CheckStyle TreeWalker,0,1,0
+881,cgeo.geocaching,Refactor: fix right curly braket position,0,1,0
+883,cgeo.geocaching,Refactor: Remove redundant final modifier,0,1,0
+889,cgeo.geocaching,Refactor: Add mising final to local variables,0,1,0
+898,cgeo.geocaching,Use local variables for common subexpressions,0,1,0
+903,cgeo.geocaching,Code cleanup duplications  codacy remarks,0,1,0
+904,cgeo.geocaching,Fixes Waypoint display flickers,0,1,0
+905,cgeo.geocaching,Avoid crash on undefined/missing mapfile,0,1,0
+906,cgeo.geocaching,mapsforge 0.6 initialadded mf 0.6started a new map activity as  internal navigation target Follow my locationAdded map menu  implemented follow-togglePositionLayerNavigationLayerDistanceView,0,1,0
+915,cgeo.geocaching,fix 5630: caches from EC shown as offline,0,1,0
+917,cgeo.geocaching,String improvementReplace connector by a more common term,0,1,0
+918,cgeo.geocaching,Remove changes from changelog which have been......gone to release branch,0,1,0
+919,cgeo.geocaching,refactoring: fix unused code findings from codacity,0,1,0
+920,cgeo.geocaching,Merge pull request #5635 from samueltardieu/uselessUseless comment fix,0,1,0
+930,cgeo.geocaching,fix #2281: abort on Log.e when debug is active,0,1,0
+934,cgeo.geocaching,Upgrade android support annotations to 23.2.1,0,1,0
+936,cgeo.geocaching,fix #5620: use okapi for registration url of OC nodes,0,1,0
+941,cgeo.geocaching,Fix #5603: Create account menu is doubled for some connectors,0,1,0
+943,cgeo.geocaching,fix #5614: main activity covering soft buttons,0,1,0
+944,cgeo.geocaching,Merge pull request #5611 from kumy/issue-5605Fix issues for new Services Settings UI,0,1,0
+955,cgeo.geocaching,Merge pull request #5609 from UniQP/castUse more specific parameter type to avoid casts,0,1,0
+958,cgeo.geocaching,Fix #5604: Move Send button in system information in a new line,0,1,0
+965,cgeo.geocaching,Merge pull request #5590 from kumy/issue-5589Fix #5589: Add a send button to about - system screen,0,1,0
+968,cgeo.geocaching,fix #5583  cleanup non existing caches from lists,0,1,0
+970,cgeo.geocaching,Fix GeoLutin tracking code pattern.,0,1,0
+973,cgeo.geocaching,Merge pull request #5585 from kumy/revokeauthorizationPermit revoke services authorizations,0,1,0
+975,cgeo.geocaching,Permit revoke OAuth authorization,0,1,0
+976,cgeo.geocaching,Fix #5231: Permit revoke crendentials authorization,0,1,0
+988,cgeo.geocaching,Remove unused AbstractCheckCredentialsPreference class,0,1,0
+994,cgeo.geocaching,Merge pull request #5567 from samueltardieu/issue-5462Please test #5462,0,1,0
+997,cgeo.geocaching,Merge pull request #5574 from samueltardieu/issue-3392fix #3392: Twitter [NUMBER] template is one off,0,1,0
+999,cgeo.geocaching,Merge pull request #5573 from samueltardieu/issue-1594fix #1594: inconsistent use of SearchResult error code,0,1,0
+1006,cgeo.geocaching,Merge pull request #5570 from pstorch/pocket_query_rawimageadded ic_menu_pocket_query svg rawimage,0,1,1
+1010,cgeo.geocaching,fix #5526: own coordinates not updated in waypoint creation screen,1,0,0
+1012,cgeo.geocaching,Merge pull request #5553 from pstorch/fix_5541fix #5541: don t reload after adding to list,0,1,0
+1014,cgeo.geocaching,Merge pull request #5545 from pstorch/fix_5424fix #5424: changed pq icon to suitecase with magnifying glass,0,1,0
+1021,cgeo.geocaching,Reorder code to simplify condition.,0,1,0
+1026,cgeo.geocaching,Move constants to right-hand side of comparisons.,0,1,0
+1028,cgeo.geocaching,fix #5549: force close on image tab without network,0,1,0
+1030,cgeo.geocaching,Minor improvements to the issue template,0,1,0
+1032,cgeo.geocaching,Merge pull request #5521 from pstorch/fix_87Fix #87: store caches on multiple lists,0,1,0
+1033,cgeo.geocaching,fix #87: store cache to multiple lists- Added n:m relationship between caches and lists- List of Lists in CacheDetailActivity- Added CopyToList Command- CacheDetailActivity Menu adjustments- Fixed basicDebugUnitTests- Adjusted CachePopup Dialog- GPX Import with multilist support- CleanIfNeeded- Code Review adjustments,0,1,0
+1037,cgeo.geocaching,Asynchronous determination of caches to refreshWork on #5533.,0,1,0
+1042,cgeo.geocaching,refactoring: extract logic for EXIF geolocation,0,1,0
+1045,cgeo.geocaching,fix #5471: reenable text selection for Android 2.3,1,0,0
+1051,cgeo.geocaching,Merge pull request #5524 from kumy/connectorstestRefactor website connectors tests,0,1,0
+1059,cgeo.geocaching,Merge pull request #5513 from UniQP/ifcombineMerge nested if statements.,0,1,0
+1066,cgeo.geocaching,Merge branch  release  into upstream,0,1,0
+1071,cgeo.geocaching,Reindent file and reorganize imports,0,1,0
+1075,cgeo.geocaching,Make cgeo distinguish between an error and a non-existing cache,0,1,0
+1081,cgeo.geocaching,Add Peter Storch to the list of contributors,0,0,1
+1083,cgeo.geocaching,fix #5483: show geotagged images on map,1,0,0
+1086,cgeo.geocaching,Add Eclipse Nullable/NonNull as defaults,0,0,1
+1087,cgeo.geocaching,Remove unnecessary qualification in Javadoc,0,1,0
+1092,cgeo.geocaching,Merge pull request #5494 from pstorch/fix_5378fix #5378: add hide disabled caches in map menu,0,1,0
+1097,cgeo.geocaching,Remove redundant static modifier of nested interfaces.,0,1,0
+1102,cgeo.geocaching,Merge pull request #5486 from UniQP/enumRemove redundant static modifier.,0,1,0
+1103,cgeo.geocaching,Merge pull request #5485 from UniQP/localRemove unnecessary local variables.,0,1,0
+1105,cgeo.geocaching,Turn method with unused return value into void method.,0,1,0
+1109,cgeo.geocaching,upgrade android support library to 23.2.0,0,1,0
+1120,cgeo.geocaching,fix #5477: crash when adding cache to watchlist,0,1,0
+1129,cgeo.geocaching,cleanup code unused imports bad javadoc unnecessary nesting unused constant,0,1,0
+1130,cgeo.geocaching,add okhttp to Eclipse libraries,0,1,0
+1131,cgeo.geocaching,Merge pull request #5464 from UniQP/whitespaceFix some whitespace issues,0,1,0
+1136,cgeo.geocaching,Remove outdated changes from changelog...as we are going for a new feature release hopefully soon,0,1,0
+1147,cgeo.geocaching,Implement CookieStore legacy interface over a CookieJar,0,1,0
+1153,cgeo.geocaching,Merge pull request #5351 from rahu/issue3819fix #3819 and #5202: make description text selectable,0,1,0
+1154,cgeo.geocaching,Merge pull request #5459 from UniQP/gccodeUse more precise regular expressions for GC/TB codes.,0,1,0
+1161,cgeo.geocaching,Merge pull request #5433 from pstorch/fix_5431fix #5431: last generated  days remaining for PQ list,0,1,0
+1180,cgeo.geocaching,workaround for Android Lint bugSeems like Lint will inherit any resource annotation from super constructors with a compatible signature  even if those are unrelated.,0,1,0
+1182,cgeo.geocaching,Adapt testSearchByOwner to realityblafoo placed another mystery,0,0,1
+1185,cgeo.geocaching,fix #5449: Hide Export menu on list of unsaved caches,0,1,0
+1191,cgeo.geocaching,Inherit @NonNull annotations from superclasses.,0,1,0
+1200,cgeo.geocaching,fix #5436: earth cache not recognized in search results,1,0,0
+1204,cgeo.geocaching,fix #5366: unique prefix to user defined Waypointsremove the prefix OWN for user defined waypoints to get a unique prefix. This is needed for correct merging,0,1,0
+1210,cgeo.geocaching,releng: update unbundled play-services to 8.4.0makes Eclipse compile again with latest app-invite changes,0,1,0
+1211,cgeo.geocaching,update to play services 8.4 again with the app invite changes we have a new google service plugin that seems to add an implicit dependency to play-services-measurements with a wrong version number,0,1,0
+1224,cgeo.geocaching,refactoring: remove more English terms from parser,0,1,0
+1225,cgeo.geocaching,fix #5419: leave encrypted logs encrypted,0,1,0
+1234,cgeo.geocaching,fix: wrong waypoint type id for project ape,0,1,0
+1236,cgeo.geocaching,Adapt mocked cache GC2JVEH to real oneCache is temporaily disabled,0,0,1
+1240,cgeo.geocaching,Fixed #5400: refresh warning only when gt 100,0,1,0
+1242,cgeo.geocaching,fix #5391: show number of caches only for downloadable PQs,0,1,0
